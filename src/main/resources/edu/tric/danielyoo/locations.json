@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Cleveland",
+    "x": 0,
+    "y": 0,
+    "hasGasStation": true
+  },
+  {
+    "name": "North Pole",
+    "x": 500,
+    "y": -100,
+    "hasGasStation": true
+  },
+  {
+    "name": "Campbell Hill",
+    "x": -50,
+    "y": -50,
+    "hasGasStation": false
+  },
+  {
+    "name": "Tokyo",
+    "x": -100,
+    "y": 1000,
+    "hasGasStation": true
+  },
+  {
+    "name": "Chicago",
+    "x": -200,
+    "y": 75,
+    "hasGasStation": true
+  },
+  {
+    "name": "Erie PA",
+    "x": 150,
+    "y": 0,
+    "hasGasStation": true
+  },
+  {
+    "name": "Allegheny Nation Forest",
+    "x": 300,
+    "y": -75,
+    "hasGasStation": false
+  }
+]
