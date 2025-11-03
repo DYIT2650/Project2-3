@@ -12,4 +12,6 @@ public class LocationManager {
     public List<Location> getLocations() {
         return locations;
     }
+
+    //TODO: add funcitonality to add to the locationloader, but now it feels little bit like its a useless wrapper over locationloader...?
 }

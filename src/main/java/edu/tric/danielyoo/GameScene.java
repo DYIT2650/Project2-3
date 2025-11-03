@@ -67,7 +67,6 @@ public class GameScene extends VBox {
 
         getChildren().addAll(title, statusLabel, messageLabel);
 
-        // Separator
         getChildren().add(new Label("--- Available Destinations ---"));
 
         // Add destinations

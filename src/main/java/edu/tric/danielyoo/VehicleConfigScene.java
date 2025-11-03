@@ -120,10 +120,6 @@ public class VehicleConfigScene extends VBox {
         errorLabel.setText(message);
     }
 
-    private void clearError() {
-        errorLabel.setText("");
-    }
-
     public double getFuelValue() {
         try {
             return Double.parseDouble(fuelField.getText());

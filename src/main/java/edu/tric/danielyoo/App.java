@@ -14,7 +14,6 @@ public class App extends Application {
 
     private static Scene scene;
     private static LocationManager locationManager;
-    private static Stage primaryStage;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -35,30 +34,18 @@ public class App extends Application {
         stage.show();
     }
 
-    /**
-     * Switch to a new scene by changing the root node
-     */
     public static void setRoot(Parent root) {
         scene.setRoot(root);
     }
 
-    /**
-     * Show the game scene with the configured vehicle
-     */
     public static void showGameScene(Vehicle vehicle) {
         setRoot(new GameScene(vehicle));
     }
 
-    /**
-     * Show the configuration scene to start a new game
-     */
     public static void showConfigScene() {
         setRoot(new VehicleConfigScene());
     }
 
-    /**
-     * Get the LocationManager instance
-     */
     public static LocationManager getLocationManager() {
         return locationManager;
     }
