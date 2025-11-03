@@ -17,8 +17,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        primaryStage = stage;
-
         // Initialize the LocationManager
         locationManager = new LocationManager("/edu/tric/danielyoo/locations.json");
 
