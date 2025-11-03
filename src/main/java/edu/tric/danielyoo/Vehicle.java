@@ -39,6 +39,14 @@ public class Vehicle {
         return location;
     }
 
+    public double getCurrentFuel() {
+        return currentFuel;
+    }
+
+    public double getMaxFuel() {
+        return maxFuel;
+    }
+
     public boolean refuel(){
         if (this.location.hasGasStation()){
             this.currentFuel = maxFuel;
