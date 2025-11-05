@@ -4,9 +4,11 @@ import java.util.List;
 
 public class LocationManager {
     private List<Location> locations;
+    private String path;
 
     public LocationManager(String resourcePath){
         this.locations = LocationLoader.loadFromResource(resourcePath);
+        this.path = resourcePath;
     }
 
     public List<Location> getLocations() {
@@ -49,6 +51,7 @@ public class LocationManager {
     }
 
     private boolean saveLocations() {
-        return LocationLoader.saveToFile(locations, "locations.json");
+        // Convert resource path to file system path for saving
+        return LocationLoader.saveToFile(locations, "src/main/resources" + path);
     }
 }

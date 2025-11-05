@@ -130,7 +130,7 @@ public class AddLocationScene extends VBox {
 
             App.showLocationManagementScene(currentVehicle);
         } else {
-            showError("A location with this name already exists. Please choose a different name.");
+            showError("There was a problem adding this location.");
         }
     }
 

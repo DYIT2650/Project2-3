@@ -42,13 +42,11 @@ public class LocationLoader {
         try {
             File file = new File(filePath);
 
-            // Create parent directories if they don't exist
+            // Ensure parent directories exist (they usually do for our resource file)
+            // Honestly not the greatest handling of writing/reading existing files but oh well
             File parentDir = file.getParentFile();
-            if (parentDir != null && !parentDir.exists()) {
-                if (!parentDir.mkdirs()) {
-                    System.err.println("Failed to create directory: " + parentDir);
-                    return false;
-                }
+            if (parentDir != null) {
+                parentDir.mkdirs(); // Try to create, but don't fail if it already exists
             }
 
             ObjectMapper objectMapper = new ObjectMapper();

@@ -1,44 +1,65 @@
-[
-  {
-    "name": "Cleveland",
-    "x": 0,
-    "y": 0,
-    "hasGasStation": true
+[ {
+  "name" : "Cleveland",
+  "position" : {
+    "x" : 0.0,
+    "y" : 0.0
   },
-  {
-    "name": "North Pole",
-    "x": 500,
-    "y": -100,
-    "hasGasStation": true
+  "x" : 0.0,
+  "y" : 0.0
+}, {
+  "name" : "North Pole",
+  "position" : {
+    "x" : 500.0,
+    "y" : -100.0
   },
-  {
-    "name": "Campbell Hill",
-    "x": -50,
-    "y": -50,
-    "hasGasStation": false
+  "x" : 500.0,
+  "y" : -100.0
+}, {
+  "name" : "Campbell Hill",
+  "position" : {
+    "x" : -50.0,
+    "y" : -50.0
   },
-  {
-    "name": "Tokyo",
-    "x": -100,
-    "y": 1000,
-    "hasGasStation": true
+  "x" : -50.0,
+  "y" : -50.0
+}, {
+  "name" : "Tokyo",
+  "position" : {
+    "x" : -100.0,
+    "y" : 1000.0
   },
-  {
-    "name": "Chicago",
-    "x": -200,
-    "y": 75,
-    "hasGasStation": true
+  "x" : -100.0,
+  "y" : 1000.0
+}, {
+  "name" : "Chicago",
+  "position" : {
+    "x" : -200.0,
+    "y" : 75.0
   },
-  {
-    "name": "Erie PA",
-    "x": 150,
-    "y": 0,
-    "hasGasStation": true
+  "x" : -200.0,
+  "y" : 75.0
+}, {
+  "name" : "Erie PA",
+  "position" : {
+    "x" : 150.0,
+    "y" : 0.0
   },
-  {
-    "name": "Allegheny Nation Forest",
-    "x": 300,
-    "y": -75,
-    "hasGasStation": false
-  }
-]
+  "x" : 150.0,
+  "y" : 0.0
+}, {
+  "name" : "Allegheny Nation Forest",
+  "position" : {
+    "x" : 300.0,
+    "y" : -75.0
+  },
+  "x" : 300.0,
+  "y" : -75.0
+}, {
+  "name" : "Test",
+  "position" : {
+    "x" : 1.0,
+    "y" : 3.0
+  },
+  "x" : 1.0,
+  "y" : 3.0
+} ]
