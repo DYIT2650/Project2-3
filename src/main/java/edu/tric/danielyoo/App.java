@@ -44,6 +44,23 @@ public class App extends Application {
         setRoot(new VehicleConfigScene());
     }
 
+    // We need to expose these top level methods for each scene to consume; we'll have buttons bind to the App definition methods that can read each scene. Maybe theres a ebtter way but this works
+    public static void showLocationManagementScene(Vehicle vehicle) {
+        setRoot(new LocationManagementScene(vehicle));
+    }
+
+    public static void showLocationManagementScene() {
+        setRoot(new LocationManagementScene(null));
+    }
+
+    public static void showAddLocationScene() {
+        setRoot(new AddLocationScene(null));
+    }
+
+    public static void showAddLocationScene(Vehicle vehicle) {
+        setRoot(new AddLocationScene(vehicle));
+    }
+
     public static LocationManager getLocationManager() {
         return locationManager;
     }

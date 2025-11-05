@@ -1,6 +1,5 @@
 package edu.tric.danielyoo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Location {
@@ -54,6 +53,17 @@ public class Location {
     
     public boolean hasGasStation() {
         return hasGasStation;
+    }
+
+    // TODO: to be hoenst, this results in a very strange serialized obejct with both vector and x/y;  there's proabbly a way to make it so we can directly serialize vector2 as well but this works for now
+    @JsonProperty("x")
+    public double getX() {
+        return position != null ? position.x : 0;
+    }
+
+    @JsonProperty("y")
+    public double getY() {
+        return position != null ? position.y : 0;
     }
 
     @Override

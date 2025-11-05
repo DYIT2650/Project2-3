@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -80,14 +81,25 @@ public class GameScene extends VBox {
         List<Location> locations = locationManager.getLocations();
         Location currentLocation = vehicle.getLocation();
 
+        VBox destinationsList = new VBox(10);
+        destinationsList.setPadding(new Insets(10));
+
         for (Location location : locations) {
             if (location.equals(currentLocation)) {
                 continue;
             }
 
             HBox locationBox = createLocationRow(location, currentLocation);
-            getChildren().add(locationBox);
+            destinationsList.getChildren().add(locationBox);
         }
+
+        // Needed changes to make sure if too big added to a scrollframe
+        ScrollPane scrollPane = new ScrollPane(destinationsList);
+        scrollPane.setFitToWidth(true);
+        scrollPane.setMaxHeight(300);
+        scrollPane.setStyle("-fx-background-color: #f0f0f0; -fx-border-color: #cccccc;");
+
+        getChildren().add(scrollPane);
     }
 
     private HBox createLocationRow(Location destination, Location currentLocation) {
@@ -131,7 +143,11 @@ public class GameScene extends VBox {
         Button newGameButton = new Button("New Game");
         newGameButton.setOnAction(e -> handleNewGame());
 
-        actions.getChildren().addAll(refuelButton, newGameButton);
+        Button manageLocationsButton = new Button("Manage Locations");
+        manageLocationsButton.setStyle("-fx-background-color: #2196F3; -fx-text-fill: white;");
+        manageLocationsButton.setOnAction(e -> handleManageLocations());
+
+        actions.getChildren().addAll(refuelButton, newGameButton, manageLocationsButton);
         getChildren().add(actions);
     }
 
@@ -151,6 +167,10 @@ public class GameScene extends VBox {
 
     private void handleNewGame() {
         App.showConfigScene();
+    }
+
+    private void handleManageLocations() {
+        App.showLocationManagementScene(vehicle);
     }
 
     private void showMessage(String message, Color color) {

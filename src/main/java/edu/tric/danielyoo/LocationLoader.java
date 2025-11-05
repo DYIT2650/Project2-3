@@ -1,5 +1,6 @@
 package edu.tric.danielyoo;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 public class LocationLoader {
 
@@ -33,5 +35,32 @@ public class LocationLoader {
         }
 
         return locations;
+    }
+
+
+    public static boolean saveToFile(List<Location> locations, String filePath) {
+        try {
+            File file = new File(filePath);
+
+            // Create parent directories if they don't exist
+            File parentDir = file.getParentFile();
+            if (parentDir != null && !parentDir.exists()) {
+                if (!parentDir.mkdirs()) {
+                    System.err.println("Failed to create directory: " + parentDir);
+                    return false;
+                }
+            }
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT); 
+            objectMapper.writeValue(file, locations);
+
+            System.out.println("Locations saved successfully to: " + filePath);
+            return true;
+        } catch (IOException e) {
+            System.err.println("Error saving locations to file: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
     }
 }
