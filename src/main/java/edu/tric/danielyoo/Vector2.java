@@ -1,9 +1,13 @@
 package edu.tric.danielyoo;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Vector2 {
     public double x, y;
-    
-    public Vector2(double x, double y) {
+
+    @JsonCreator
+    public Vector2(@JsonProperty("x") double x, @JsonProperty("y") double y) {
         this.x = x;
         this.y = y;
     }

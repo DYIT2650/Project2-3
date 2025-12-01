@@ -73,7 +73,7 @@ public class LocationManagementScene extends VBox {
             nameLabel.setStyle("-fx-font-weight: bold; -fx-font-size: 14px;");
 
             Label positionLabel = new Label(String.format("Position: (%.1f, %.1f)",
-                location.getX(), location.getY()));
+                location.getPosition().x, location.getPosition().y));
             positionLabel.setStyle("-fx-font-size: 12px;");
 
             Label gasStationLabel = new Label("Gas Station: " +
